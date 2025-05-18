@@ -1,24 +1,25 @@
 📦 Implement Storage Classes & Dynamic Volume Provisioning
 
 🔧 View Existing StorageClasses
-
-<code>kubectl get storageclass</code>
+```bash
+kubectl get storageclass
+```
 
 🧱 Create a StorageClass (e.g., using local-path)
-<code>
-# sc-local.yaml
+sc-local.yaml
+```yaml
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: local-sc
 provisioner: kubernetes.io/no-provisioner
 volumeBindingMode: WaitForFirstConsumer
-</code>
+```
 
 kubectl apply -f sc-local.yaml
 
 🚀 PVC for Dynamic Provisioning (e.g., Minikube uses standard)
-# pvc.yaml
+pvc.yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
