@@ -2,10 +2,10 @@
 
 🔧 View Existing StorageClasses
 
-kubectl get storageclass
+<code>kubectl get storageclass</code>
 
 🧱 Create a StorageClass (e.g., using local-path)
-
+<code>
 # sc-local.yaml
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
@@ -13,7 +13,7 @@ metadata:
   name: local-sc
 provisioner: kubernetes.io/no-provisioner
 volumeBindingMode: WaitForFirstConsumer
-
+</code>
 
 kubectl apply -f sc-local.yaml
 
@@ -68,3 +68,5 @@ Recycle	Performs basic rm -rf (deprecated)
 
 🛠 Manage PV and PVC
 🔍 View PVs and PVCs
+kubectl get pv
+kubectl get pvc
