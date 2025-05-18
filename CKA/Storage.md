@@ -52,7 +52,7 @@ kubectl apply -f pvc.yaml
 kubectl get pv
 ```
 
-## 📁 Configure Volume Types, Access Modes & Reclaim Policies
+# 📁 Configure Volume Types, Access Modes & Reclaim Policies
 ## 📂 Static PV Example (hostPath)
 
 
@@ -92,16 +92,16 @@ kubectl apply -f pv.yaml
 | Recycle | Performs basic `rm -rf` (deprecated) |
 
 
-## 🛠 Manage PV and PVC
+# 🛠 Manage PV and PVC
 
-### 🔍 View PVs and PVCs
+## 🔍 View PVs and PVCs
 
 ```bash
 kubectl get pv
 kubectl get pvc
 ```
 
-### 🔄 Bind Static PV + PVC
+## 🔄 Bind Static PV + PVC
 
 ```yaml
 # pvc.yaml
@@ -117,14 +117,14 @@ spec:
       storage: 1Gi
   volumeName: host-pv        # Bind to specific PV
 ```
-### ❌ Delete PVC and Observe Behavior
+## ❌ Delete PVC and Observe Behavior
 
 ```bash
 kubectl delete pvc static-pvc
 kubectl get pv               # Check PV status (e.g., Released)
 ```
 
-### 🧹 Cleanup
+## 🧹 Cleanup
 ```bash
 kubectl delete pv host-pv
 ```
